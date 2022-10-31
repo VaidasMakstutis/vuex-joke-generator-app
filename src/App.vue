@@ -1,10 +1,27 @@
 <template>
-  <nav>
+<div id="app">
+  <nav id="nav" class="flex justify-between max-w-xl mx-auto text-2xl">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/jokes">All Jokes</router-link>
   </nav>
   <router-view/>
+</div>
 </template>
+
+<script>
+
+import { mapActions } from 'vuex';
+
+export default {
+  methods: {
+    ...mapActions(['setCurrentJoke'])
+  },
+  mounted() {
+    this.setCurrentJoke();
+  }
+}
+</script>
+
 
 <style>
 #app {
@@ -16,7 +33,7 @@
 }
 
 nav {
-  padding: 30px;
+  padding: 60px;
 }
 
 nav a {
