@@ -2,7 +2,7 @@
 <div>
   <h1 class="text-3xl p-12 font-extrabold">This is list of all jokes!</h1>
   <h4 v-for="(joke, index) in jokes" :key=index>
-    <span>{{ index+1 }}</span>
+    <span>{{ index+1 }}.</span>
     {{ joke }}
   </h4>
 </div>
